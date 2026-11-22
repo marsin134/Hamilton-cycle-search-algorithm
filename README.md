@@ -9,7 +9,7 @@
 ## Сборка
 GCC / MinGW:
 ```bash
-gcc -std=c11 -O2 -Wall -Wextra -pedantic main.c -o hamilton
+gcc -o main.exe main.c
 ```
 Запуск:
 ```bash
