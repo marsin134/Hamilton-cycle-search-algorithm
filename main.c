@@ -1,10 +1,3 @@
-/*
- * Формат файла графа:
- *   directed n
- *   далее n строк матрицы смежности (0 или 1)
- * где directed = 1 для ориентированного графа, 0 для неориентированного.
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -133,7 +126,7 @@ static void backtrack(SearchState *s, int depth) {
         int start = s->path[0];
         int last = s->path[g->n - 1];
 
-        if (g->adj[last][start]) {
+        if (g->adj[last][start] && last != start) {
             if (!g->directed && s->path[1] > s->path[g->n - 1])
                 return;
 
